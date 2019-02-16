@@ -1,0 +1,20 @@
+- hosts:
+    - all
+  tasks:
+    - command: sudo apt-get install apache2
+  tags:
+    - install_apache
+
+- hosts:
+    - all
+  tasks:
+    - command: sudo service apache2 start
+  tags:
+    - deploy_server
+
+- hosts:
+    - all
+  tasks:
+    - command: sudo service apache2 stop
+  tags:
+    - undeploy_server
