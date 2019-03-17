@@ -30,7 +30,7 @@ app = Flask(__name__)
 
 @app.route('/linkMe')
 def get_linkme():
-    return 'Jenkins trigger build!'
+    return 'Jenkins trigger build...'
 
 
 if __name__ == '__main__':
