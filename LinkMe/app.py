@@ -30,7 +30,7 @@ app = Flask(__name__)
 
 @app.route('/linkMe')
 def get_linkme():
-    return 'Jenkins Integration testing...'
+    return 'Jenkins Integration testing!'
 
 
 if __name__ == '__main__':
