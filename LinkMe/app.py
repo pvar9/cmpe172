@@ -33,7 +33,7 @@ def get_linkme():
     return 'LinkMe is Active!'
 
 @app.route('/JenkinsTest')
-def get_linkme():
+def get_jenkinspage():
     return 'Jenkins Status: UP'
 
 
