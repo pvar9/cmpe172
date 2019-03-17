@@ -30,7 +30,7 @@ app = Flask(__name__)
 
 @app.route('/linkMe')
 def get_linkme():
-    return 'LinkMe running with Jenkins!'
+    return 'Jenkins running LinkMe!'
 
 
 if __name__ == '__main__':
