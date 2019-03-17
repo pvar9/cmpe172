@@ -34,7 +34,7 @@ def get_linkme():
 
 @app.route('/JenkinsTest')
 def get_jenkinspage():
-    return 'Jenkins Status: UP'
+    return 'Jenkins Status: UP!'
 
 
 if __name__ == '__main__':
