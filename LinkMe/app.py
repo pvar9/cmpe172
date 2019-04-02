@@ -1,6 +1,12 @@
 from flask import Flask, render_template
 #from flaskext.mysql import MySQLimport urllib
 from flaskext.mysql import MySQL
+#from app import app
+#from db_setup import init_db, db_session
+from searchoptions import MusicSearchForm
+from flask import flash, render_template, request, redirect
+#from models import Album
+
 
 
 app = Flask(__name__)
@@ -29,6 +35,37 @@ app = Flask(__name__)
 # def test_ui():
 #     contents = urllib.urlopen("http://127.0.0.1:5000/test_get_db").read()
 #     return render_template('index.html')
+@app.route('/SearchBar')
+def getsearch_bar():
+	return render_template("searchbar.html")
+
+ 
+ 
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    search = MusicSearchForm(request.form)
+    if request.method == 'POST':
+        return search_results(search)
+ 
+    return render_template('searchbar.html', form=search)
+ 
+ 
+@app.route('/results')
+def search_results(search):
+    results = []
+    search_string = search.data['search']
+ 
+    if search.data['search'] == '':
+        qry = db_session.query(Album)
+        results = qry.all()
+ 
+    if not results:
+        flash('No results found!')
+        return redirect('/')
+    else:
+        # display results
+        return render_template('results.html', results=results)
+
 
 @app.route('/linkMe')
 def get_linkme():
