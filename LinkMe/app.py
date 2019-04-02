@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 #from flaskext.mysql import MySQLimport urllib
+from flaskext.mysql import MySQL
 
 
 app = Flask(__name__)
@@ -17,10 +18,11 @@ app = Flask(__name__)
 #     conn = mysql.connect()
 #     cursor = conn.cursor()
 
-#     cursor.execute("SELECT first_name, last_name FROM employees limit 2;")
-#     data = cursor.fetchall()
-#     print(type(data))
-#     return str(data)
+
+	# cursor.execute("SELECT emp_no, first_name, last_name FROM employees limit 3;")
+ #    data = cursor.fetchall()
+ #    print(type(data))
+ #    return str(data[0])
 
 
 # @app.route('/test1')
