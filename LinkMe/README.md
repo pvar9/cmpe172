@@ -27,6 +27,10 @@ pip install WTForms
 pip install flask_oidc
 ```
 
+```
+pip install pyopenssl
+```
+
 ### Data/Database Creation
 
 All of the data for the application is available on https://github.com/datacharmer/test_db provided by Instructor Andrew Bond in the project requirments. 
